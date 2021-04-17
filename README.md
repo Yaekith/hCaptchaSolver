@@ -1,0 +1,2 @@
+# HCaptchaSolver
+ Finished? Buggy tho
