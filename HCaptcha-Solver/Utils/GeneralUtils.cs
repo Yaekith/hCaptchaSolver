@@ -26,5 +26,16 @@ namespace HCaptcha_Solver.Utils
             Client.DownloadFile(url, $"Images\\{name}");
             return $"Images\\{name}";
         }
+
+        public static string GetFixedWord(string input)
+        {
+            switch(input.ToString())
+            {
+                default:
+                    return input;
+                case "motorbus":
+                    return "bus";
+            }
+        }
     }
 }

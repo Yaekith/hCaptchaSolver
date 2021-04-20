@@ -9,10 +9,19 @@ namespace HCaptcha_Solver
         static void Main(string[] args)
         {
             Console.Title = "HCaptcha Solver";
-            Console.WriteLine("[!] Retrieving new challenge [!]");
-            HCaptcha captcha = new HCaptcha("51829642-2cda-4b09-896c-594f89d700cc", "democaptcha.com");
-            var solved = captcha.SolveCaptcha();
+            Console.ForegroundColor = ConsoleColor.White;
+            SolveCaptcha();
             Console.ReadKey();
+        }
+
+        private static string SolveCaptcha()
+        {
+            HCaptcha captcha = new HCaptcha("f5561ba9-8f1e-40ca-9b5b-a0b3f719ef34", "discord.com", true);
+            var solved = captcha.SolveCaptcha();
+            if (solved.pass)
+                return solved.token;
+            else
+                return SolveCaptcha();
         }
     }
 }
