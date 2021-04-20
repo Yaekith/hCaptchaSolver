@@ -30,8 +30,6 @@ namespace HCaptcha_Solver.API
 
         private HCaptchaSiteConfig Config { get; set; }
 
-        private bool ConfirmMode { get; set; }
-
         private bool _Debug { get; set; }
 
         public HCaptcha(string sitekey, string host, bool debug = false)
